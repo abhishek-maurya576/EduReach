@@ -1,6 +1,3 @@
-Here's a **README.md** file for your **EduReach** GitHub repository:  
-
----
 
 ```md
 # 📚 EduReach – AI-Powered Learning Companion  
