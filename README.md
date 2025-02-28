@@ -1,5 +1,4 @@
 
-```md
 # 📚 EduReach – AI-Powered Learning Companion  
 
 EduReach is an AI-powered educational app designed to enhance learning efficiency through interactive courses, quizzes, task management, and personalized progress tracking. Whether you're a student or a lifelong learner, EduReach provides a structured way to improve your skills and knowledge.
@@ -67,6 +66,12 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ---
 
+## 🎖 Developed by Team Knights
+EduReach is proudly developed by Team Knights, a passionate group of developers dedicated to building innovative educational solutions.
+
+💡 Join us in shaping the future of AI-driven learning!
+
+---
 ## 📜 License  
 This project is **open-source** and available under the **MIT License**.
 
@@ -77,6 +82,3 @@ This project is **open-source** and available under the **MIT License**.
 🔗 [GitHub](https://github.com/abhishek-maurya576) | [LinkedIn](www.linkedin.com/in/abhishekmaurya9118) | [YouTube](https://youtube.com/@bforbca)  
 
 👨‍💻 Feel free to explore, contribute, and enhance the EduReach experience! 🚀  
-```
-
----
