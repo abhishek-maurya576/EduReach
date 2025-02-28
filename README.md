@@ -77,8 +77,7 @@ EduReach is proudly developed by **Team Knights**, a passionate group of develop
 💡 Join us in shaping the future of AI-driven learning!  
 
 ## 👥 Team Members (Team Knights)  
-- **Abhishek Maurya** – Project Lead & Android Developer  
-- **[Replace Name]** – AI Integration & Backend Developer  
+- **Abhishek Maurya** – Project Lead & Android Developer  + AI Integration & Backend Developer
 - **Shivank Rastogi** – UI/UX Designer  
 - **Kumar Manglam** – Firebase & Database Manager  
 
