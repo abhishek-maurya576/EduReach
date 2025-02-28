@@ -24,6 +24,10 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 ---
 
 ## 📷 Screenshots  
+| Welcome | Registration | Interest | Login | Forget Password | Profile |
+|------|--------|---------|------|------|---------|
+| ![Welcome](image/get_started.png) | ![Registration](image/registration.png) | ![Interest](image/interest.png) | ![Login](image/login.png) | ![Forget Password](image/forget.png) | ![Profile](image/profile.png) |
+
 | Home | Courses | AI Tutor | Quiz | Task | Progress |
 |------|--------|---------|------|------|---------|
 | ![Home](image/home.png) | ![Courses](image/courses.png) | ![AI Tutor](image/ai_tutor.png) | ![Quiz](image/quiz.png) | ![Task](image/task.png) | ![Progress](image/progress.png) |
