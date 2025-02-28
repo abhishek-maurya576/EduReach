@@ -1,4 +1,4 @@
-
+ 
 # 📚 EduReach – AI-Powered Learning Companion  
 
 EduReach is an AI-powered educational app designed to enhance learning efficiency through interactive courses, quizzes, task management, and personalized progress tracking. Whether you're a student or a lifelong learner, EduReach provides a structured way to improve your skills and knowledge.
