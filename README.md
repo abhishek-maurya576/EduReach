@@ -1,4 +1,4 @@
- 
+
 # 📚 EduReach – AI-Powered Learning Companion  
 
 EduReach is an AI-powered educational app designed to enhance learning efficiency through interactive courses, quizzes, task management, and personalized progress tracking. Whether you're a student or a lifelong learner, EduReach provides a structured way to improve your skills and knowledge.
@@ -18,8 +18,8 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 - **Frontend:** Jetpack Compose (Android UI)  
 - **Backend:** Firebase   
-- **AI Integration:**  Google Dialogflow (for AI tutor)
-- **API Integration:** For Courses request
+- **AI Integration:** Google Dialogflow (for AI tutor)  
+- **API Integration:** For fetching courses  
 - **Database:** Firestore / SQLite  
 
 ---
@@ -35,7 +35,7 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ---
 
-## 🏗 Installation  (Wait, after project accepting)
+## 🏗 Installation (Installation guide will be updated after project approval)  
 
 1. **Clone the Repository**  
    ```bash
@@ -70,26 +70,28 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 6. **Create a Pull Request** 🔥  
 
 ---
-c
-## 🎖 Developed by Team Knights
-EduReach is proudly developed by Team Knights, a passionate group of developers dedicated to building innovative educational solutions.
 
-💡 Join us in shaping the future of AI-driven learning!
+## 🎖 Developed by Team Knights  
+EduReach is proudly developed by **Team Knights**, a passionate group of developers dedicated to building innovative educational solutions.  
 
-## 👥 Team Members (Team Knights)
+💡 Join us in shaping the future of AI-driven learning!  
+
+## 👥 Team Members (Team Knights)  
 - **Abhishek Maurya** – Project Lead & Android Developer  
-- **[Abhishek Maurya]** – AI Integration & Backend Developer  
-- **[Shivank Rastogi]** – UI/UX Designer  
-- **[Kumar Manglam]** – Firebase & Database Manager  
+- **[Replace Name]** – AI Integration & Backend Developer  
+- **Shivank Rastogi** – UI/UX Designer  
+- **Kumar Manglam** – Firebase & Database Manager  
 
 ---
+
 ## 📜 License  
-This project is **open-source** and available under the [**MIT License**](LICENSE).
+This project is **open-source** and available under the [**MIT License**](LICENSE).  
 
 ---
 
 ## 💬 Connect With Me  
 📧 Email: maurya972137@gmail.com  
-🔗 [GitHub](https://github.com/abhishek-maurya576) | [LinkedIn](www.linkedin.com/in/abhishekmaurya9118) | [YouTube](https://youtube.com/@bforbca)  
+🔗 [GitHub](https://github.com/abhishek-maurya576) | [LinkedIn](https://www.linkedin.com/in/abhishekmaurya9118) | [YouTube](https://youtube.com/@bforbca)  
 
 👨‍💻 Feel free to explore, contribute, and enhance the EduReach experience! 🚀  
+
