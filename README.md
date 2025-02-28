@@ -35,7 +35,7 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ---
 
-## 🏗 Installation  
+## 🏗 Installation  (Wait, after project accepting)
 
 1. **Clone the Repository**  
    ```bash
