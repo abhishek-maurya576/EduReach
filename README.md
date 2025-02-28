@@ -16,9 +16,10 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ## 🛠 Tech Stack  
 
-- **Frontend:** Jetpack Compose / XML (Android UI)  
-- **Backend:** Firebase / Node.js (if applicable)  
-- **AI Integration:** OpenAI API / Google Dialogflow (for AI tutor)  
+- **Frontend:** Jetpack Compose (Android UI)  
+- **Backend:** Firebase   
+- **AI Integration:**  Google Dialogflow (for AI tutor)
+- **API Integration:** For Courses request
 - **Database:** Firestore / SQLite  
 
 ---
