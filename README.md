@@ -65,7 +65,7 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 6. **Create a Pull Request** 🔥  
 
 ---
-
+c
 ## 🎖 Developed by Team Knights
 EduReach is proudly developed by Team Knights, a passionate group of developers dedicated to building innovative educational solutions.
 
