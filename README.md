@@ -84,7 +84,7 @@ EduReach is proudly developed by Team Knights, a passionate group of developers 
 
 ---
 ## 📜 License  
-This project is **open-source** and available under the **MIT License**.
+This project is **open-source** and available under the [**MIT License**](LICENSE).
 
 ---
 
