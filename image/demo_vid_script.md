@@ -71,8 +71,11 @@ What’s next?
 2️⃣ Video Creation Tips
 
 ✅ Use visuals: Screen recordings, UI mockups (Figma), short animations.
+
 ✅ Keep it dynamic: Background music, smooth transitions, and minimal text.
+
 ✅ Narrate clearly: Use a conversational tone and subtitles if needed.
+
 ✅ End with CTA: "Visit our GitHub for more details! Link in the description."
 
 
