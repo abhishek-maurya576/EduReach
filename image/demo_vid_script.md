@@ -93,5 +93,7 @@ For Animation: Canva, PowerPoint (export as video)
 Final Submission Steps
 
 1️⃣ Create & Edit Video (2.5-3 min)
+
 2️⃣ Export in MP4 format (1080p preferred)
+
 3️⃣ Upload & Share (if required, use Google Drive, YouTube, or project submission link)
