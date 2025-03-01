@@ -37,17 +37,6 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ## 🏗 Installation (Installation guide will be updated after project approval)  
 
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/abhishek-maurya576/EduReach.git
-   cd EduReach
-   ```
-
-2. **Open in Android Studio**  
-   - Open the project in **Android Studio** and let it sync dependencies.
-
-3. **Run the App**  
-   - Connect an emulator or Android device and hit **Run ▶️**.
 
 ---
 
