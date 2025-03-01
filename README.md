@@ -20,7 +20,8 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 - **Backend:** Firebase   
 - **AI Integration:** Google Dialogflow (for AI tutor)  
 - **API Integration:** For fetching courses  
-- **Database:** Firestore / SQLite  
+- **Database:** Firestore / SQLite
+- **Development Assistance:** Gemini Code Assist (Used for faster and optimized coding)
 
 ---
 
