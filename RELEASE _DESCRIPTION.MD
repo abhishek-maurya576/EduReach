@@ -38,5 +38,5 @@ We're excited to announce the initial release of EduReach, an innovative educati
 - Join our community for support
 
 ---
-SHA-256: [Will be added upon release]
-APK Size: [Will be added upon release] 
+
+APK Size: 22 mb
