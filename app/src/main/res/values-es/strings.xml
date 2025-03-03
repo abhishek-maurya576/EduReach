@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name - Not translated -->
+    <string name="app_name">EduReach</string>
+    
+    <!-- Common Actions -->
+    <string name="action_next">Siguiente</string>
+    <string name="action_previous">Anterior</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="action_save">Guardar</string>
+    <string name="action_done">Listo</string>
+    <string name="action_confirm">Confirmar</string>
+    <string name="action_download">Descargar</string>
+    <string name="action_continue">Continuar</string>
+    <string name="action_get_started">Comenzar</string>
+    <string name="action_sign_in">Iniciar sesión</string>
+    <string name="action_sign_up">Registrarse</string>
+    <string name="action_sign_out">Cerrar sesión</string>
+    <string name="action_back">Atrás</string>
+    
+    <!-- Authentication -->
+    <string name="auth_email">Correo electrónico</string>
+    <string name="auth_password">Contraseña</string>
+    <string name="auth_confirm_password">Confirmar contraseña</string>
+    <string name="auth_forgot_password">¿Olvidó su contraseña?</string>
+    <string name="auth_reset_password">Restablecer contraseña</string>
+    <string name="auth_create_account">Crear cuenta</string>
+    <string name="auth_already_have_account">¿Ya tiene una cuenta? Inicie sesión</string>
+    <string name="auth_dont_have_account">¿No tiene una cuenta? Regístrese</string>
+    <string name="auth_name">Nombre completo</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Bienvenido a EduReach</string>
+    <string name="welcome_subtitle">Educación de calidad para todos, en todas partes</string>
+    <string name="welcome_description">Acceda a contenido educativo personalizado que se adapta a sus necesidades, incluso sin conexión a Internet.</string>
+    
+    <!-- Learning Paths -->
+    <string name="learning_paths_title">Rutas de aprendizaje</string>
+    <string name="learning_paths_description">Elija una ruta de aprendizaje que le interese</string>
+    <string name="learning_path_progress">Progreso: %1$d%%</string>
+    <string name="learning_path_continue">Continuar aprendiendo</string>
+    <string name="learning_path_start">Comenzar a aprender</string>
+    
+    <!-- Lessons -->
+    <string name="lesson_title">Lección</string>
+    <string name="lesson_objective">Objetivo</string>
+    <string name="lesson_complete">Marcar como completada</string>
+    <string name="lesson_completed">Completada</string>
+    <string name="lesson_take_quiz">Realizar cuestionario</string>
+    <string name="lesson_download">Descargar para uso sin conexión</string>
+    <string name="lesson_download_success">Lección descargada correctamente</string>
+    <string name="lesson_download_error">No se pudo descargar la lección</string>
+    
+    <!-- Quiz/Assessment -->
+    <string name="quiz_title">Cuestionario</string>
+    <string name="quiz_question">Pregunta %1$d de %2$d</string>
+    <string name="quiz_check_answer">Verificar respuesta</string>
+    <string name="quiz_next_question">Siguiente pregunta</string>
+    <string name="quiz_complete">Completar cuestionario</string>
+    <string name="quiz_correct">¡Correcto!</string>
+    <string name="quiz_incorrect">Incorrecto</string>
+    <string name="quiz_explanation">Explicación:</string>
+    <string name="quiz_score">Su puntuación: %1$d%%</string>
+    <string name="quiz_passed">¡Felicidades! Ha aprobado el cuestionario.</string>
+    <string name="quiz_failed">No ha aprobado. Intente revisar la lección nuevamente.</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Configuración</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_description">Cambiar el idioma de la aplicación</string>
+    <string name="settings_select_language">Seleccione su idioma preferido</string>
+    <string name="settings_language_changes_applied">Los cambios se aplicarán inmediatamente</string>
+    
+    <string name="settings_data_usage">Uso de datos</string>
+    <string name="settings_data_usage_description">Administrar el ancho de banda y el contenido sin conexión</string>
+    <string name="settings_current_network">Red actual</string>
+    <string name="settings_metered_connection">Está en una conexión medida (datos móviles)</string>
+    <string name="settings_unmetered_connection">Está en una conexión no medida (WiFi)</string>
+    <string name="settings_low_bandwidth_mode">Modo de bajo ancho de banda</string>
+    <string name="settings_enable_low_bandwidth">Habilitar modo de bajo ancho de banda</string>
+    <string name="settings_low_bandwidth_description">Reduce el uso de datos cargando contenido simplificado</string>
+    <string name="settings_auto_download">Descargar contenido automáticamente</string>
+    <string name="settings_auto_download_description">Descargar lecciones automáticamente cuando está en WiFi</string>
+    <string name="settings_about_low_bandwidth">Acerca del modo de bajo ancho de banda</string>
+    <string name="settings_low_bandwidth_info">Cuando está habilitado, EduReach:\n• Cargará versiones de texto de las lecciones\n• Evitará cargar imágenes de alta resolución\n• Desactivará la reproducción automática de videos\n• Minimizará las solicitudes de red\n\nEsto puede reducir significativamente el uso de datos en áreas con conectividad limitada.</string>
+    
+    <string name="settings_storage">Almacenamiento</string>
+    <string name="settings_storage_description">Administrar contenido descargado</string>
+    <string name="settings_clear_downloads">Borrar contenido descargado</string>
+    <string name="settings_storage_used">Almacenamiento utilizado: %1$s</string>
+    
+    <string name="app_version">Versión %1$s</string>
+    <string name="app_description">EduReach es una aplicación educativa diseñada para proporcionar educación de calidad a comunidades desatendidas, con funciones para el aprendizaje sin conexión y uso de bajo ancho de banda.</string>
+    
+    <!-- Connectivity -->
+    <string name="error_no_internet">Sin conexión a Internet</string>
+    <string name="error_connection_failed">Falló la conexión</string>
+    <string name="offline_mode_active">Modo sin conexión activo</string>
+    <string name="offline_content_available">Contenido disponible sin conexión</string>
+    <string name="syncing">Sincronizando su progreso…</string>
+    <string name="sync_complete">Sincronización completa</string>
+    
+    <!-- General Errors -->
+    <string name="error_general">Algo salió mal. Por favor, inténtelo de nuevo.</string>
+    <string name="error_loading">No se pudo cargar el contenido</string>
+    <string name="error_try_offline">¿Le gustaría cargar contenido sin conexión?</string>
+</resources> 

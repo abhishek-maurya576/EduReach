@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name - Not translated -->
+    <string name="app_name">EduReach</string>
+    
+    <!-- Common Actions -->
+    <string name="action_next">आगे</string>
+    <string name="action_previous">पीछे</string>
+    <string name="action_cancel">रद्द करें</string>
+    <string name="action_save">सहेजें</string>
+    <string name="action_done">हो गया</string>
+    <string name="action_confirm">पुष्टि करें</string>
+    <string name="action_download">डाउनलोड करें</string>
+    <string name="action_continue">जारी रखें</string>
+    <string name="action_get_started">शुरू करें</string>
+    <string name="action_sign_in">साइन इन करें</string>
+    <string name="action_sign_up">साइन अप करें</string>
+    <string name="action_sign_out">साइन आउट करें</string>
+    <string name="action_back">वापस</string>
+    
+    <!-- Authentication -->
+    <string name="auth_email">ईमेल</string>
+    <string name="auth_password">पासवर्ड</string>
+    <string name="auth_confirm_password">पासवर्ड की पुष्टि करें</string>
+    <string name="auth_forgot_password">पासवर्ड भूल गए?</string>
+    <string name="auth_reset_password">पासवर्ड रीसेट करें</string>
+    <string name="auth_create_account">खाता बनाएं</string>
+    <string name="auth_already_have_account">पहले से ही खाता है? साइन इन करें</string>
+    <string name="auth_dont_have_account">खाता नहीं है? साइन अप करें</string>
+    <string name="auth_name">पूरा नाम</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_title">EduReach में आपका स्वागत है</string>
+    <string name="welcome_subtitle">सभी के लिए, हर जगह गुणवत्तापूर्ण शिक्षा</string>
+    <string name="welcome_description">अपनी आवश्यकताओं के अनुसार अनुकूलित शिक्षण सामग्री तक पहुंचें, यहां तक कि इंटरनेट कनेक्शन के बिना भी।</string>
+    
+    <!-- Learning Paths -->
+    <string name="learning_paths_title">शिक्षण मार्ग</string>
+    <string name="learning_paths_description">अपनी रुचि का एक शिक्षण मार्ग चुनें</string>
+    <string name="learning_path_progress">प्रगति: %1$d%%</string>
+    <string name="learning_path_continue">सीखना जारी रखें</string>
+    <string name="learning_path_start">सीखना शुरू करें</string>
+    
+    <!-- Lessons -->
+    <string name="lesson_title">पाठ</string>
+    <string name="lesson_objective">उद्देश्य</string>
+    <string name="lesson_complete">पूर्ण के रूप में चिह्नित करें</string>
+    <string name="lesson_completed">पूर्ण</string>
+    <string name="lesson_take_quiz">क्विज लें</string>
+    <string name="lesson_download">ऑफलाइन के लिए डाउनलोड करें</string>
+    <string name="lesson_download_success">पाठ सफलतापूर्वक डाउनलोड किया गया</string>
+    <string name="lesson_download_error">पाठ डाउनलोड करने में विफल</string>
+    
+    <!-- Quiz/Assessment -->
+    <string name="quiz_title">क्विज़</string>
+    <string name="quiz_question">प्रश्न %1$d / %2$d</string>
+    <string name="quiz_check_answer">उत्तर जांचें</string>
+    <string name="quiz_next_question">अगला प्रश्न</string>
+    <string name="quiz_complete">क्विज़ पूरा करें</string>
+    <string name="quiz_correct">सही!</string>
+    <string name="quiz_incorrect">गलत</string>
+    <string name="quiz_explanation">स्पष्टीकरण:</string>
+    <string name="quiz_score">आपका स्कोर: %1$d%%</string>
+    <string name="quiz_passed">बधाई हो! आपने क्विज़ पास कर लिया है।</string>
+    <string name="quiz_failed">आप पास नहीं हुए। पाठ को फिर से देखने का प्रयास करें।</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_language_description">ऐप की भाषा बदलें</string>
+    <string name="settings_select_language">अपनी पसंदीदा भाषा चुनें</string>
+    <string name="settings_language_changes_applied">परिवर्तन तुरंत लागू होंगे</string>
+    
+    <string name="settings_data_usage">डेटा उपयोग</string>
+    <string name="settings_data_usage_description">बैंडविड्थ और ऑफलाइन सामग्री प्रबंधित करें</string>
+    <string name="settings_current_network">वर्तमान नेटवर्क</string>
+    <string name="settings_metered_connection">आप मीटर्ड कनेक्शन (मोबाइल डेटा) पर हैं</string>
+    <string name="settings_unmetered_connection">आप अनमीटर्ड कनेक्शन (वाई-फाई) पर हैं</string>
+    <string name="settings_low_bandwidth_mode">कम बैंडविड्थ मोड</string>
+    <string name="settings_enable_low_bandwidth">कम बैंडविड्थ मोड सक्षम करें</string>
+    <string name="settings_low_bandwidth_description">सरलीकृत सामग्री लोड करके डेटा उपयोग कम करता है</string>
+    <string name="settings_auto_download">सामग्री स्वतः डाउनलोड करें</string>
+    <string name="settings_auto_download_description">वाई-फाई पर पाठ स्वचालित रूप से डाउनलोड करें</string>
+    <string name="settings_about_low_bandwidth">कम बैंडविड्थ मोड के बारे में</string>
+    <string name="settings_low_bandwidth_info">सक्षम होने पर, EduReach:\n• केवल पाठ वाले पाठों को लोड करेगा\n• उच्च-रिज़ॉल्यूशन छवियों को लोड करने से बचेगा\n• वीडियो का ऑटो-प्ले अक्षम करेगा\n• नेटवर्क अनुरोधों को कम करेगा\n\nयह सीमित कनेक्टिविटी वाले क्षेत्रों में डेटा उपयोग को काफी कम कर सकता है।</string>
+    
+    <string name="settings_storage">स्टोरेज</string>
+    <string name="settings_storage_description">डाउनलोड की गई सामग्री प्रबंधित करें</string>
+    <string name="settings_clear_downloads">डाउनलोड की गई सामग्री साफ़ करें</string>
+    <string name="settings_storage_used">उपयोग किया गया स्टोरेज: %1$s</string>
+    
+    <string name="app_version">संस्करण %1$s</string>
+    <string name="app_description">EduReach एक शैक्षिक ऐप है जिसे अल्पसेवित समुदायों को गुणवत्तापूर्ण शिक्षा प्रदान करने के लिए डिज़ाइन किया गया है, जिसमें ऑफलाइन लर्निंग और कम-बैंडविड्थ उपयोग के लिए सुविधाएँ हैं।</string>
+    
+    <!-- Connectivity -->
+    <string name="error_no_internet">कोई इंटरनेट कनेक्शन नहीं</string>
+    <string name="error_connection_failed">कनेक्शन विफल</string>
+    <string name="offline_mode_active">ऑफलाइन मोड सक्रिय</string>
+    <string name="offline_content_available">सामग्री ऑफलाइन उपलब्ध है</string>
+    <string name="syncing">आपकी प्रगति सिंक हो रही है…</string>
+    <string name="sync_complete">सिंक पूर्ण</string>
+    
+    <!-- General Errors -->
+    <string name="error_general">कुछ गलत हो गया। कृपया पुन: प्रयास करें।</string>
+    <string name="error_loading">सामग्री लोड करने में विफल</string>
+    <string name="error_try_offline">क्या आप ऑफलाइन सामग्री लोड करना चाहेंगे?</string>
+</resources> 

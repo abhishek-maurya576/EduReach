@@ -1,0 +1,106 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">EduReach</string>
+    
+    <!-- Common Actions -->
+    <string name="action_next">Next</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="action_done">Done</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_download">Download</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_get_started">Get Started</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_back">Back</string>
+    
+    <!-- Authentication -->
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_confirm_password">Confirm Password</string>
+    <string name="auth_forgot_password">Forgot Password?</string>
+    <string name="auth_reset_password">Reset Password</string>
+    <string name="auth_create_account">Create Account</string>
+    <string name="auth_already_have_account">Already have an account? Sign in</string>
+    <string name="auth_dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="auth_name">Full Name</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Welcome to EduReach</string>
+    <string name="welcome_subtitle">Quality education for everyone, everywhere</string>
+    <string name="welcome_description">Access personalized learning content that adapts to your needs, even without an internet connection.</string>
+    
+    <!-- Learning Paths -->
+    <string name="learning_paths_title">Learning Paths</string>
+    <string name="learning_paths_description">Choose a learning path that interests you</string>
+    <string name="learning_path_progress">Progress: %1$d%%</string>
+    <string name="learning_path_continue">Continue Learning</string>
+    <string name="learning_path_start">Start Learning</string>
+    
+    <!-- Lessons -->
+    <string name="lesson_title">Lesson</string>
+    <string name="lesson_objective">Objective</string>
+    <string name="lesson_complete">Mark as Complete</string>
+    <string name="lesson_completed">Completed</string>
+    <string name="lesson_take_quiz">Take Quiz</string>
+    <string name="lesson_download">Download for Offline</string>
+    <string name="lesson_download_success">Lesson downloaded successfully</string>
+    <string name="lesson_download_error">Failed to download lesson</string>
+    
+    <!-- Quiz/Assessment -->
+    <string name="quiz_title">Quiz</string>
+    <string name="quiz_question">Question %1$d of %2$d</string>
+    <string name="quiz_check_answer">Check Answer</string>
+    <string name="quiz_next_question">Next Question</string>
+    <string name="quiz_complete">Complete Quiz</string>
+    <string name="quiz_correct">Correct!</string>
+    <string name="quiz_incorrect">Incorrect</string>
+    <string name="quiz_explanation">Explanation:</string>
+    <string name="quiz_score">Your Score: %1$d%%</string>
+    <string name="quiz_passed">Congratulations! You passed the quiz.</string>
+    <string name="quiz_failed">You didn\'t pass. Try reviewing the lesson again.</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_description">Change app language</string>
+    <string name="settings_select_language">Select your preferred language</string>
+    <string name="settings_language_changes_applied">Changes will be applied immediately</string>
+    
+    <string name="settings_data_usage">Data Usage</string>
+    <string name="settings_data_usage_description">Manage bandwidth and offline content</string>
+    <string name="settings_current_network">Current Network</string>
+    <string name="settings_metered_connection">You are on a metered connection (mobile data)</string>
+    <string name="settings_unmetered_connection">You are on an unmetered connection (WiFi)</string>
+    <string name="settings_low_bandwidth_mode">Low Bandwidth Mode</string>
+    <string name="settings_enable_low_bandwidth">Enable Low Bandwidth Mode</string>
+    <string name="settings_low_bandwidth_description">Reduces data usage by loading simplified content</string>
+    <string name="settings_auto_download">Auto-Download Content</string>
+    <string name="settings_auto_download_description">Automatically download lessons when on WiFi</string>
+    <string name="settings_about_low_bandwidth">About Low Bandwidth Mode</string>
+    <string name="settings_low_bandwidth_info">When enabled, EduReach will:\n• Load text-only versions of lessons\n• Skip loading high-resolution images\n• Disable auto-play of videos\n• Minimize network requests\n\nThis can significantly reduce data usage in areas with limited connectivity.</string>
+    
+    <string name="settings_storage">Storage</string>
+    <string name="settings_storage_description">Manage downloaded content</string>
+    <string name="settings_clear_downloads">Clear Downloaded Content</string>
+    <string name="settings_storage_used">Storage used: %1$s</string>
+    
+    <string name="app_version">Version %1$s</string>
+    <string name="app_description">EduReach is an educational app designed to provide quality education to underserved communities, with features for offline learning and low-bandwidth usage.</string>
+    
+    <!-- Connectivity -->
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_connection_failed">Connection failed</string>
+    <string name="offline_mode_active">Offline mode active</string>
+    <string name="offline_content_available">Content available offline</string>
+    <string name="syncing">Syncing your progress…</string>
+    <string name="sync_complete">Sync complete</string>
+    
+    <!-- General Errors -->
+    <string name="error_general">Something went wrong. Please try again.</string>
+    <string name="error_loading">Failed to load content</string>
+    <string name="error_try_offline">Would you like to load offline content?</string>
+</resources>
