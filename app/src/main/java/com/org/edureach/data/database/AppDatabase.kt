@@ -5,15 +5,20 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.org.edureach.data.database.daos.ChatDao
+import com.org.edureach.data.database.entities.ChatMessageEntity
+import com.org.edureach.data.database.entities.ChatSessionEntity
 
 @Database(
     entities = [
         CachedLesson::class,
         CachedQuestion::class,
         DownloadedMedia::class,
-        UserProgress::class
+        UserProgress::class,
+        ChatSessionEntity::class,
+        ChatMessageEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(Converters::class)
@@ -22,6 +27,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun questionDao(): QuestionDao
     abstract fun mediaDao(): MediaDao
     abstract fun progressDao(): ProgressDao
+    abstract fun chatDao(): ChatDao
 
     companion object {
         @Volatile

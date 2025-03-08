@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "29701036434",
+    "firebase_url": "https://edureach-xyz-default-rtdb.firebaseio.com",
+    "project_id": "edureach-xyz",
+    "storage_bucket": "edureach-xyz.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29701036434:android:42bcc7a9c3723571ab894b",
+        "android_client_info": {
+          "package_name": "com.org.edureach"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO1g5x1FlkjNKOm5FpSas_jENcaidn6To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

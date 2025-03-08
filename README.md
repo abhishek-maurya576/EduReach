@@ -1,16 +1,19 @@
-
 # 📚 EduReach – AI-Powered Learning Companion  
 
 EduReach is an AI-powered educational app designed to enhance learning efficiency through interactive courses, quizzes, task management, and personalized progress tracking. Whether you're a student or a lifelong learner, EduReach provides a structured way to improve your skills and knowledge.
 
 ## 🚀 Features  
 
-✅ **AI Tutor** – Get instant topic summaries and best learning resources.  
+✅ **AI Tutor** – Get instant topic summaries, concept explanations, and learning resources with the Gemini AI integration.
+✅ **Chat History** – Save and access your previous AI Tutor interactions for easy reference.
+✅ **Response Length Options** – Choose between Brief, Summary, or Long responses based on your needs.
+✅ **Markdown Formatting** – Enjoy well-formatted educational content with proper headings, lists, and emphasis.
 ✅ **Interactive Quizzes** – Test your knowledge with engaging quizzes.  
 ✅ **Task Management** – Organize and track your learning tasks efficiently.  
 ✅ **Progress Tracking** – Monitor your learning journey with visual progress bars.  
 ✅ **Course Selection** – Choose from multiple subjects like AI, Python, Science, and more.  
 ✅ **User Profile** – Customize your learning experience with a personal profile.  
+✅ **Offline Support** – Access content even without an internet connection.
 
 ---
 
@@ -18,10 +21,11 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 - **Frontend:** Jetpack Compose (Android UI)  
 - **Backend:** Firebase   
-- **AI Integration:** Google Dialogflow (for AI tutor)  
-- **API Integration:** For fetching courses  
-- **Database:** Firestore / SQLite
-- **Development Assistance:** Gemini Code Assist (Used for faster and optimized coding)
+- **AI Integration:** Google Gemini 2.0 Flash API
+- **Local Database:** Room Database
+- **Remote Database:** Firestore  
+- **UI Component Library:** Material 3
+- **Development Assistance:** Claude 3.7 Sonnet (Used for faster and optimized coding)
 
 ---
 
@@ -36,8 +40,40 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ---
 
-## 🏗 Installation (Installation guide will be updated after project approval)  
+## 🆕 Version History
 
+### v1.2.0 (Current)
+- Added chat history storage with Room Database
+- Implemented advanced AI Tutor with Gemini 2.0 Flash API
+- Added response length options (Brief, Summary, Long)
+- Improved content formatting with Markdown support
+- Enhanced UI components and responsiveness
+
+### v1.1.0
+- Added offline support
+- Improved UI/UX design
+- Fixed various bugs and performance issues
+
+### v1.0.0
+- Initial release with core features
+
+---
+
+## 🏗 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/EduReach.git
+   ```
+
+2. Open the project in Android Studio
+
+3. Add your Gemini API key to `local.properties`:
+   ```
+   geminiApiKey=YOUR_API_KEY
+   ```
+
+4. Build and run the application
 
 ---
 
@@ -67,7 +103,7 @@ EduReach is proudly developed by **Team Knights**, a passionate group of develop
 💡 Join us in shaping the future of AI-driven learning!  
 
 ## 👥 Team Members (Team Knights)  
-- **Abhishek Maurya** – Project Lead & Android Developer  + AI Integration & Backend Developer
+- **Abhishek Maurya** – Project Lead & Android Developer + AI Integration & Backend Developer
 - **Shivank Rastogi** – UI/UX Designer  
 - **Kumar Manglam** – Firebase & Database Manager  
 
