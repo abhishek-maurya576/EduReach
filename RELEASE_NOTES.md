@@ -1,6 +1,6 @@
 # EduReach Release Notes
 
-## Version 1.2.0 (June 2024)
+## Version 1.2.0 (Feb 2025)
 
 ### Major Features
 
