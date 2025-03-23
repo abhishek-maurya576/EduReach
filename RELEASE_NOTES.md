@@ -30,13 +30,13 @@
 - Improved scroll behavior in chat history
 - Resolved state restoration issues
 
-## Version 1.1.0 (April 2024)
+## Version 1.1.0 (Feb 2025)
 
 - Added offline support
 - Improved UI/UX design
 - Fixed various bugs and performance issues
 
-## Version 1.0.0 (February 2024)
+## Version 1.0.0 (January 2025)
 
 - Initial release with core features
 - Basic AI tutoring functionality

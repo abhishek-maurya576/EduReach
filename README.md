@@ -5,14 +5,21 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 ## 🚀 Features  
 
 ✅ **AI Tutor** – Get instant topic summaries, concept explanations, and learning resources with the Gemini AI integration.
+
 ✅ **Chat History** – Save and access your previous AI Tutor interactions for easy reference.
+
 ✅ **Response Length Options** – Choose between Brief, Summary, or Long responses based on your needs.
+
 ✅ **Markdown Formatting** – Enjoy well-formatted educational content with proper headings, lists, and emphasis.
+
 ✅ **Interactive Quizzes** – Test your knowledge with engaging quizzes.  
 ✅ **Task Management** – Organize and track your learning tasks with due dates, descriptions, and completion status.  
 ✅ **Progress Tracking** – Monitor your learning journey with visual progress bars.  
+
 ✅ **Course Selection** – Choose from multiple subjects like AI, Python, Science, and more.  
+
 ✅ **User Profile** – Customize your learning experience with a personal profile.  
+
 ✅ **Offline Support** – Access content even without an internet connection.
 ✅ **Lesson Progression** – Unlock new lessons as you complete previous ones.
 ✅ **Secure Task Storage** – All tasks are securely stored and only accessible to their creator.
