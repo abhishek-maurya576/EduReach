@@ -18,7 +18,10 @@ android {
         versionName = "1.2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "GEMINI_API_KEY", "\"${project.findProperty("geminiApiKey") ?: ""}\"")
+        
+        // Update how we handle the API key
+        val geminiKey = project.findProperty("geminiApiKey") ?: ""
+        buildConfigField("String", "GEMINI_API_KEY", "\"$geminiKey\"")
         manifestPlaceholders.putAll(
             mapOf(
                 "geminiApiKey" to (project.findProperty("geminiApiKey")?.toString() ?: "")

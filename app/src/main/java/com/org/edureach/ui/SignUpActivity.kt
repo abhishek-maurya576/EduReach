@@ -365,8 +365,8 @@ fun SignUpScreen(navController: NavController) {
                                             .set(userData)
                                             .addOnSuccessListener {
                                                 isLoading = false
-                                                // Navigate to interest screen instead of home
-                                                navController.navigate("interest") {
+                                                // Navigate to home screen after successful signup
+                                                navController.navigate("home") {
                                                     popUpTo("welcome") { inclusive = true }
                                                 }
                                             }
