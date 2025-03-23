@@ -1,84 +1,130 @@
 package com.org.edureach.ui
 
+import android.app.DatePickerDialog
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Pending
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+import androidx.compose.ui.window.Dialog
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.org.edureach.viewmodel.TaskViewModel
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
-data class Task(
-    val id: String,
-    val title: String,
-    val description: String,
-    val dueDate: String,
-    val isCompleted: Boolean = false
-)
-
-enum class TaskFilter {
-    ALL, PENDING, COMPLETED
-}
+import com.org.edureach.ui.Task
+import java.text.SimpleDateFormat
+import java.util.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TaskScreen(
-    navController: NavController,
-    viewModel: TaskViewModel = viewModel()
-) {
+fun TaskScreen(navController: NavController) {
+    val viewModel: TaskViewModel = viewModel()
     val tasks by viewModel.tasks.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+    val operationSuccessful by viewModel.operationSuccessful.collectAsState()
     
     var showAddTaskDialog by remember { mutableStateOf(false) }
-    var selectedFilter by remember { mutableStateOf(TaskFilter.ALL) }
-    var selectedTask by remember { mutableStateOf<Task?>(null) }
-
+    val context = LocalContext.current
+    
+    // Show snackbar for errors
+    val snackbarHostState = remember { SnackbarHostState() }
+    
+    // Handle error messages
+    LaunchedEffect(errorMessage) {
+        errorMessage?.let {
+            snackbarHostState.showSnackbar(
+                message = it,
+                actionLabel = "Dismiss",
+                duration = SnackbarDuration.Long
+            )
+            viewModel.clearError()
+        }
+    }
+    
+    // Handle success message
+    LaunchedEffect(operationSuccessful) {
+        if (operationSuccessful == true) {
+            snackbarHostState.showSnackbar(
+                message = "Task saved successfully",
+                actionLabel = "OK",
+                duration = SnackbarDuration.Short
+            )
+            viewModel.resetOperationStatus()
+        }
+    }
+    
     Scaffold(
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
-                title = { Text("Tasks") },
+                title = { Text("Tasks & Assignments") },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back",
-                            tint = Color.Black
+                            contentDescription = "Back"
                         )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                    containerColor = Color(0xFFE0E0E0)
                 )
             )
         },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { showAddTaskDialog = true },
-                containerColor = Color(0xFFDBA84F)
+                containerColor = Color(0xFF306998)
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,
                     contentDescription = "Add Task",
-                    tint = Color.Black
+                    tint = Color.White
+                )
+            }
+        },
+        bottomBar = {
+            NavigationBar {
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
+                    label = { Text("Home") },
+                    selected = false,
+                    onClick = { 
+                        navController.navigate("home") {
+                            popUpTo("home") { inclusive = true }
+                        }
+                    }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = "Quiz") },
+                    label = { Text("Quiz") },
+                    selected = false,
+                    onClick = { navController.navigate("quiz") }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.CheckCircle, contentDescription = "Task") },
+                    label = { Text("Task") },
+                    selected = true,
+                    onClick = { /* Already on Task screen */ }
+                )
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.Assessment, contentDescription = "Progress") },
+                    label = { Text("Progress") },
+                    selected = false,
+                    onClick = { navController.navigate("progress") }
                 )
             }
         }
@@ -95,61 +141,66 @@ fun TaskScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
+                    .padding(16.dp)
             ) {
-                // Task filters
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    FilterChip(
-                        selected = selectedFilter == TaskFilter.ALL,
-                        onClick = { selectedFilter = TaskFilter.ALL },
-                        label = { Text("All") }
-                    )
-                    FilterChip(
-                        selected = selectedFilter == TaskFilter.PENDING,
-                        onClick = { selectedFilter = TaskFilter.PENDING },
-                        label = { Text("Pending") }
-                    )
-                    FilterChip(
-                        selected = selectedFilter == TaskFilter.COMPLETED,
-                        onClick = { selectedFilter = TaskFilter.COMPLETED },
-                        label = { Text("Completed") }
-                    )
-                }
-
-                // Tasks list
-                LazyColumn(
-                    modifier = Modifier.fillMaxSize(),
-                    contentPadding = PaddingValues(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    items(
-                        tasks.filter { task ->
-                            when (selectedFilter) {
-                                TaskFilter.ALL -> true
-                                TaskFilter.PENDING -> !task.isCompleted
-                                TaskFilter.COMPLETED -> task.isCompleted
-                            }
+                if (tasks.isEmpty()) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.CheckCircle,
+                                contentDescription = null,
+                                modifier = Modifier.size(80.dp),
+                                tint = Color.LightGray
+                            )
+                            Spacer(modifier = Modifier.height(16.dp))
+                            Text(
+                                text = "No tasks yet",
+                                style = MaterialTheme.typography.titleLarge,
+                                color = Color.Gray
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Text(
+                                text = "Tap the + button to add a new task",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = Color.Gray
+                            )
                         }
-                    ) { task ->
-                        TaskItem(
-                            task = task,
-                            onTaskClick = { selectedTask = task },
-                            onTaskComplete = { viewModel.updateTaskCompletion(task) },
-                            onTaskDelete = { viewModel.deleteTask(task.id) }
-                        )
+                    }
+                } else {
+                    Text(
+                        text = "Your Tasks",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(bottom = 16.dp)
+                    )
+                    
+                    LazyColumn(
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        items(tasks) { task ->
+                            TaskItem(
+                                task = task,
+                                onToggleComplete = { 
+                                    viewModel.updateTaskCompletion(task)
+                                },
+                                onDeleteTask = { 
+                                    viewModel.deleteTask(task.id)
+                                }
+                            )
+                        }
                     }
                 }
             }
         }
     }
-
-    // Add Task Dialog
+    
     if (showAddTaskDialog) {
-        TaskDialog(
+        AddTaskDialog(
             onDismiss = { showAddTaskDialog = false },
             onTaskAdded = { title, description, dueDate ->
                 viewModel.addTask(title, description, dueDate)
@@ -157,222 +208,79 @@ fun TaskScreen(
             }
         )
     }
-
-    // Task Details Dialog
-    selectedTask?.let { task ->
-        TaskDetailsDialog(
-            task = task,
-            onDismiss = { selectedTask = null },
-            onTaskComplete = {
-                viewModel.updateTaskCompletion(task)
-                selectedTask = null
-            },
-            onTaskDelete = {
-                viewModel.deleteTask(task.id)
-                selectedTask = null
-            }
-        )
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TaskDialog(
-    onDismiss: () -> Unit,
-    onTaskAdded: (String, String, String) -> Unit
-) {
-    var title by remember { mutableStateOf("") }
-    var description by remember { mutableStateOf("") }
-    var dueDate by remember { mutableStateOf(LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)) }
-
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text("Add New Task") },
-        text = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                OutlinedTextField(
-                    value = title,
-                    onValueChange = { title = it },
-                    label = { Text("Title") },
-                    modifier = Modifier.fillMaxWidth()
-                )
-                
-                OutlinedTextField(
-                    value = description,
-                    onValueChange = { description = it },
-                    label = { Text("Description") },
-                    modifier = Modifier.fillMaxWidth()
-                )
-                
-                OutlinedTextField(
-                    value = dueDate,
-                    onValueChange = { dueDate = it },
-                    label = { Text("Due Date (YYYY-MM-DD)") },
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
-        },
-        confirmButton = {
-            TextButton(
-                onClick = {
-                    if (title.isNotBlank()) {
-                        onTaskAdded(title, description, dueDate)
-                    }
-                }
-            ) {
-                Text("Add")
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Cancel")
-            }
-        }
-    )
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TaskDetailsDialog(
-    task: Task,
-    onDismiss: () -> Unit,
-    onTaskComplete: () -> Unit,
-    onTaskDelete: () -> Unit
-) {
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text(task.title) },
-        text = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Text(
-                    text = task.description,
-                    fontSize = 16.sp
-                )
-                Text(
-                    text = "Due: ${task.dueDate}",
-                    fontSize = 14.sp,
-                    color = Color.Gray
-                )
-                Text(
-                    text = "Status: ${if (task.isCompleted) "Completed" else "Pending"}",
-                    fontSize = 14.sp,
-                    color = if (task.isCompleted) Color(0xFF4CAF50) else Color.Gray
-                )
-            }
-        },
-        confirmButton = {
-            Row {
-                TextButton(onClick = onTaskComplete) {
-                    Text(if (task.isCompleted) "Mark as Incomplete" else "Mark as Complete")
-                }
-                TextButton(onClick = onTaskDelete) {
-                    Icon(
-                        imageVector = Icons.Default.Delete,
-                        contentDescription = "Delete Task",
-                        tint = Color.Red
-                    )
-                }
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Close")
-            }
-        }
-    )
 }
 
 @Composable
 fun TaskItem(
     task: Task,
-    onTaskClick: () -> Unit,
-    onTaskComplete: () -> Unit,
-    onTaskDelete: () -> Unit
+    onToggleComplete: () -> Unit,
+    onDeleteTask: () -> Unit
 ) {
     Card(
         modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onTaskClick),
-        shape = RoundedCornerShape(12.dp),
+            .fillMaxWidth(),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (task.isCompleted) 
-                Color(0xFFE8F5E9) 
-            else 
-                Color(0xFFF5F5F5)
+            containerColor = if (task.isCompleted) Color(0xFFE8F5E9) else Color.White
         )
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
+            Checkbox(
+                checked = task.isCompleted,
+                onCheckedChange = { onToggleComplete() },
+                colors = CheckboxDefaults.colors(
+                    checkedColor = Color(0xFF4CAF50)
+                )
+            )
+            
+            Spacer(modifier = Modifier.width(8.dp))
+            
+            Column(
                 modifier = Modifier.weight(1f)
             ) {
-                IconButton(
-                    onClick = onTaskComplete,
-                    modifier = Modifier.size(24.dp)
-                ) {
-                    Icon(
-                        imageVector = if (task.isCompleted) 
-                            Icons.Default.CheckCircle 
-                        else 
-                            Icons.Default.Pending,
-                        contentDescription = if (task.isCompleted) 
-                            "Mark as incomplete" 
-                        else 
-                            "Mark as complete",
-                        tint = if (task.isCompleted) 
-                            Color(0xFF4CAF50) 
-                        else 
-                            Color.Gray
-                    )
-                }
-
-                Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .padding(start = 16.dp)
-                ) {
-                    Text(
-                        text = task.title,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Medium,
-                        color = Color.Black
-                    )
-                    
+                Text(
+                    text = task.title,
+                    style = MaterialTheme.typography.titleMedium,
+                    textDecoration = if (task.isCompleted) TextDecoration.LineThrough else TextDecoration.None,
+                    color = if (task.isCompleted) Color.Gray else Color.Black
+                )
+                
+                if (task.description.isNotEmpty()) {
                     Spacer(modifier = Modifier.height(4.dp))
-                    
                     Text(
                         text = task.description,
-                        fontSize = 14.sp,
-                        color = Color.Black
-                    )
-                    
-                    Spacer(modifier = Modifier.height(4.dp))
-                    
-                    Text(
-                        text = "Due: ${task.dueDate}",
-                        fontSize = 12.sp,
+                        style = MaterialTheme.typography.bodyMedium,
                         color = Color.Gray
                     )
                 }
+                
+                if (task.dueDate.isNotEmpty()) {
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.CalendarToday,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp),
+                            tint = if (task.isCompleted) Color.Gray else Color(0xFF306998)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = task.dueDate,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = if (task.isCompleted) Color.Gray else Color(0xFF306998)
+                        )
+                    }
+                }
             }
-
-            IconButton(onClick = onTaskDelete) {
+            
+            IconButton(onClick = onDeleteTask) {
                 Icon(
                     imageVector = Icons.Default.Delete,
                     contentDescription = "Delete Task",
@@ -381,4 +289,105 @@ fun TaskItem(
             }
         }
     }
-} 
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AddTaskDialog(
+    onDismiss: () -> Unit,
+    onTaskAdded: (title: String, description: String, dueDate: String) -> Unit
+) {
+    var title by remember { mutableStateOf("") }
+    var description by remember { mutableStateOf("") }
+    var dueDate by remember { mutableStateOf("") }
+    
+    val context = LocalContext.current
+    val calendar = Calendar.getInstance()
+    
+    val datePickerDialog = DatePickerDialog(
+        context,
+        { _, year, month, dayOfMonth ->
+            calendar.set(year, month, dayOfMonth)
+            val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+            dueDate = dateFormat.format(calendar.time)
+        },
+        calendar.get(Calendar.YEAR),
+        calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH)
+    )
+    
+    Dialog(onDismissRequest = onDismiss) {
+        Surface(
+            shape = RoundedCornerShape(16.dp),
+            color = Color.White
+        ) {
+            Column(
+                modifier = Modifier
+                    .padding(20.dp)
+                    .fillMaxWidth()
+            ) {
+                Text(
+                    text = "Add New Task",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold
+                )
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                OutlinedTextField(
+                    value = title,
+                    onValueChange = { title = it },
+                    label = { Text("Task Title") },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                OutlinedTextField(
+                    value = description,
+                    onValueChange = { description = it },
+                    label = { Text("Description (Optional)") },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                OutlinedTextField(
+                    value = dueDate,
+                    onValueChange = {},
+                    label = { Text("Due Date (Optional)") },
+                    modifier = Modifier.fillMaxWidth(),
+                    trailingIcon = {
+                        IconButton(onClick = { datePickerDialog.show() }) {
+                            Icon(
+                                imageVector = Icons.Default.CalendarToday,
+                                contentDescription = "Select Date"
+                            )
+                        }
+                    },
+                    readOnly = true
+                )
+                
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(onClick = onDismiss) {
+                        Text("Cancel")
+                    }
+                    
+                    Spacer(modifier = Modifier.width(8.dp))
+                    
+                    Button(
+                        onClick = { onTaskAdded(title, description, dueDate) },
+                        enabled = title.isNotEmpty()
+                    ) {
+                        Text("Add Task")
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,11 +9,13 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 ✅ **Response Length Options** – Choose between Brief, Summary, or Long responses based on your needs.
 ✅ **Markdown Formatting** – Enjoy well-formatted educational content with proper headings, lists, and emphasis.
 ✅ **Interactive Quizzes** – Test your knowledge with engaging quizzes.  
-✅ **Task Management** – Organize and track your learning tasks efficiently.  
+✅ **Task Management** – Organize and track your learning tasks with due dates, descriptions, and completion status.  
 ✅ **Progress Tracking** – Monitor your learning journey with visual progress bars.  
 ✅ **Course Selection** – Choose from multiple subjects like AI, Python, Science, and more.  
 ✅ **User Profile** – Customize your learning experience with a personal profile.  
 ✅ **Offline Support** – Access content even without an internet connection.
+✅ **Lesson Progression** – Unlock new lessons as you complete previous ones.
+✅ **Secure Task Storage** – All tasks are securely stored and only accessible to their creator.
 
 ---
 
@@ -42,7 +44,15 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ## 🆕 Version History
 
-### v1.2.0 (Current)
+### v1.3.0 (Current)
+- Implemented enhanced Task Management system with cloud storage
+- Added secure Firebase authentication for tasks
+- Added comprehensive lesson progression system with dependencies
+- Implemented user-friendly error handling and feedback
+- Added date selection for task due dates
+- Improved UI for task management
+
+### v1.2.0
 - Added chat history storage with Room Database
 - Implemented advanced AI Tutor with Gemini 2.0 Flash API
 - Added response length options (Brief, Summary, Long)
@@ -73,7 +83,13 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
    geminiApiKey=YOUR_API_KEY
    ```
 
-4. Build and run the application
+4. Set up Firebase:
+   - Create a Firebase project
+   - Add your Android app to the project
+   - Download and add the google-services.json file
+   - Configure Firestore security rules as described in the documentation
+
+5. Build and run the application
 
 ---
 
@@ -118,5 +134,5 @@ This project is **open-source** and available under the [**MIT License**](LICENS
 📧 Email: maurya972137@gmail.com  
 🔗 [GitHub](https://github.com/abhishek-maurya576) | [LinkedIn](https://www.linkedin.com/in/abhishekmaurya9118) | [YouTube](https://youtube.com/@bforbca)  
 
-👨‍💻 Feel free to explore, contribute, and enhance the EduReach experience! 🚀  
+👨‍💻 Feel free to explore, contribute, and enhance the EduReach experience! 🚀
 
