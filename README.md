@@ -20,8 +20,8 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ✅ **User Profile** – Customize your learning experience with a personal profile.  
 
-✅ **Offline Support** – Access content even without an internet connection.
-✅ **Lesson Progression** – Unlock new lessons as you complete previous ones.
+✅ **Offline Support** – Access content even without an internet connection.  
+✅ **Lesson Progression** – Unlock new lessons as you complete previous ones.  
 ✅ **Secure Task Storage** – All tasks are securely stored and only accessible to their creator.
 
 ---
@@ -34,7 +34,7 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 - **Local Database:** Room Database
 - **Remote Database:** Firestore  
 - **UI Component Library:** Material 3
-- **Development Assistance:** Claude 3.7 Sonnet (Used for faster and optimized coding)
+- **Development Assistance:** Gemini flash 2.0 and Claude 3.7 Sonnet (Used for faster and optimized coding)
 
 ---
 
