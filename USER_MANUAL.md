@@ -179,7 +179,7 @@ If you encounter any issues not covered in this manual:
 
 - **Email**: maurya972137@gmail.com
 - **In-app Support**: Profile > Help & Support
-- **Website**: [edureach.example.com](https://edureach.example.com)
+- **Website**: NA
 
 ---
 
