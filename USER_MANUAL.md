@@ -58,7 +58,7 @@ Monitor your learning journey:
 - See time spent on different topics
 - Analyze performance trends
 
-### Resource Library
+### Resource Library(Upcoming)
 Access a wide range of learning materials:
 - Video tutorials
 - Practice exercises
