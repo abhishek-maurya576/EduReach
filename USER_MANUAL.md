@@ -22,7 +22,7 @@ EduReach is an innovative learning platform designed to help students manage the
 ## Getting Started
 
 ### Installation
-1. Download EduReach from the GitHub Release 
+1. Download EduReach from the [GitHub Release](https://github.com/abhishek-maurya576/EduReach/releases)
 2. Open the app and create an account or sign in
 3. Complete the initial setup process:
    - Select your education level
