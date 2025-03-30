@@ -1,5 +1,47 @@
 # EduReach Release Notes
 
+## Version 1.4.0 (March 2025)
+
+### Major Features
+
+#### EduWise AI Learning Companion
+- **Adaptive Learning Styles**: Support for multiple learning styles (Visual, Auditory, Kinesthetic, Reading/Writing, Simple)
+- **Session Management**: Create and manage learning sessions with context-aware memory
+- **Customizable AI Personality**: Choose between Supportive, Challenging, or Socratic teaching approaches
+- **Study Recommendations**: Personalized study suggestions with priority levels
+
+#### User Experience Improvements
+- **Streamlined Interface**: Redesigned top navigation with improved menu organization
+- **Automatic Session Creation**: Sessions created automatically when needed
+- **Enhanced Sharing**: Improved sharing of learning conversations
+
+#### Technical Improvements
+- **Room Database Integration**: Enhanced local storage for sessions and messages
+- **MVVM Architecture**: Improved separation of concerns
+- **Error Handling**: Better error states and user feedback
+- **Performance Optimization**: Reduced UI recompositions
+
+## Version 1.3.0 (Feb 2025)
+
+### Major Features
+
+#### Enhanced Task Management
+- **Cloud Storage**: Tasks are now securely stored in Firebase Firestore
+- **User-specific Tasks**: Each user can only see and manage their own tasks
+- **Due Date Selection**: Calendar date picker for task due dates
+- **Task Status Indicators**: Clear visual feedback for task completion status
+
+#### Lesson Progression System
+- **Sequential Learning**: Lessons must be completed in order
+- **Progressive Unlocking**: New lessons unlock as you complete previous ones
+- **Level-based Structure**: Content organized into beginner, intermediate, and advanced levels
+- **Visual Indicators**: Clear indication of unlocked, locked, and completed lessons
+
+### Technical Improvements
+- **Firebase Security Rules**: Secure data access with custom Firestore rules
+- **User Authentication**: Task access limited to authenticated users
+- **Data Validation**: Improved data integrity checks
+
 ## Version 1.2.0 (Feb 2025)
 
 ### Major Features

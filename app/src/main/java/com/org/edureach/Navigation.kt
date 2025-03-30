@@ -42,6 +42,7 @@ import com.org.edureach.ui.ForgetPasswordScreen
 import com.org.edureach.ui.ProfileScreen
 import com.org.edureach.ui.TaskScreen
 import com.google.firebase.auth.FirebaseAuth
+import com.org.edureach.ui.EduWiseScreen
 
 @Composable
 fun EduReachNavigation(
@@ -145,6 +146,10 @@ fun EduReachNavigation(
         // Add new AI Tutor screen
         composable("ai_tutor") {
             AITutorScreen(navController)
+        }
+        
+        composable("eduwise") {
+            EduWiseScreen(navController = navController)
         }
     }
 }

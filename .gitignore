@@ -88,3 +88,24 @@ ehthumbs.db
 
 # Android Profiling
 *.hprof 
+local.properties
+# Sensitive files
+local.properties
+google-services.json
+gemini.properties
+
+# Build outputs
+/build/
+/app/build/
+/captures/
+
+# Generated files
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Gradle files
+.gradle/
+build/

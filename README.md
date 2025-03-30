@@ -4,6 +4,10 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ## 🚀 Features  
 
+✅ **EduWise AI Companion** – Personalized learning assistant that adapts to your learning style (Visual, Auditory, Kinesthetic, Reading/Writing, or Simple).
+
+✅ **Customizable AI Personality** – Choose between Supportive, Challenging, or Socratic teaching approaches to match your preferences.
+
 ✅ **AI Tutor** – Get instant topic summaries, concept explanations, and learning resources with the Gemini AI integration.
 
 ✅ **Chat History** – Save and access your previous AI Tutor interactions for easy reference.
@@ -20,8 +24,8 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 ✅ **User Profile** – Customize your learning experience with a personal profile.  
 
-✅ **Offline Support** – Access content even without an internet connection.
-✅ **Lesson Progression** – Unlock new lessons as you complete previous ones.
+✅ **Offline Support** – Access content even without an internet connection.  
+✅ **Lesson Progression** – Unlock new lessons as you complete previous ones.  
 ✅ **Secure Task Storage** – All tasks are securely stored and only accessible to their creator.
 
 ---
@@ -34,24 +38,34 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 - **Local Database:** Room Database
 - **Remote Database:** Firestore  
 - **UI Component Library:** Material 3
-- **Development Assistance:** Claude 3.7 Sonnet (Used for faster and optimized coding)
+- **Development Assistance:** Gemini flash 2.0 and Claude 3.7 Sonnet (Used for faster and optimized coding)
 
 ---
 
 ## 📷 Screenshots  
-| Welcome | Registration | Interest | Login | Forget Password | Profile |
-|------|--------|---------|------|------|---------|
-| ![Welcome](image/get_started.png) | ![Registration](image/registration.png) | ![Interest](image/interest.png) | ![Login](image/login.png) | ![Forget Password](image/forget.png) | ![Profile](image/profile.png) |
+| Welcome | Registration | Login | Forget Password | Profile |
+|------|--------|------|------|---------|
+| ![Welcome](image/get_started.png) | ![Registration](image/registration.png) | ![Login](image/login.png) | ![Forget Password](image/forget.png) | ![Profile](image/profile.png) |
 
 | Home | Courses | AI Tutor | Quiz | Task | Progress |
 |------|--------|---------|------|------|---------|
 | ![Home](image/home.png) | ![Courses](image/courses.png) | ![AI Tutor](image/ai_tutor.png) | ![Quiz](image/quiz.png) | ![Task](image/task.png) | ![Progress](image/progress.png) |
 
 ---
-
+##  🚀Flow Diagram
+![flow](image/flow_diagram.png)
+---
 ## 🆕 Version History
 
-### v1.3.0 (Current)
+### v1.4.0 (Current)
+- Added EduWise AI Learning Companion with adaptive learning styles
+- Implemented customizable AI personalities (Supportive, Challenging, Socratic)
+- Added session management with automatic session creation
+- Enhanced UI with improved navigation and menu organization
+- Added study recommendations with priority levels
+- For detailed information, see [EduWise Feature Documentation](docs/EDUWISE_FEATURE.md)
+
+### v1.3.0
 - Implemented enhanced Task Management system with cloud storage
 - Added secure Firebase authentication for tasks
 - Added comprehensive lesson progression system with dependencies
@@ -126,9 +140,9 @@ EduReach is proudly developed by **Team Knights**, a passionate group of develop
 💡 Join us in shaping the future of AI-driven learning!  
 
 ## 👥 Team Members (Team Knights)  
-- **Abhishek Maurya** – Project Lead & Android Developer + AI Integration & Backend Developer
-- **Shivank Rastogi** – UI/UX Designer  
-- **Kumar Manglam** – Firebase & Database Manager  
+- [**Abhishek Maurya**](https://github.com/abhishek-maurya576) – Project Lead & Android Developer
+- [**Shivank Rastogi**](https://github.com/shivank638815) – UI/UX Designer  
+- [**Kumar Manglam**](https://github.com/KManglam) – Firebase & Database Manager  
 
 ---
 
