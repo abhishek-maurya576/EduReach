@@ -53,7 +53,17 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 ---
 ## 🆕 Version History
 
-### v1.3.0 (Current)
+
+### v1.4.0 (Current)
+- Added personalized learning style assessment and adaptation *EduWise*
+- Implemented multiple AI personality modes (Supportive, Challenging, Socratic)
+- Enhanced session management with multiple chat sessions
+- Added study recommendations based on learning style
+- Improved UI with Material You dynamic theming
+- Optimized app performance and reduced memory usage
+
+
+### v1.3.0 
 - Implemented enhanced Task Management system with cloud storage
 - Added secure Firebase authentication for tasks
 - Added comprehensive lesson progression system with dependencies
