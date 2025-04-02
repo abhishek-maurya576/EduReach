@@ -97,16 +97,25 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
 
 2. Open the project in Android Studio
 
-3. Add your Gemini API key to `local.properties`:
-   ```
-   geminiApiKey=YOUR_API_KEY
-   ```
+3. Set up configuration files:
+   - Copy `local.properties.example` to `local.properties` and add your SDK path:
+     ```
+     sdk.dir=YOUR_ANDROID_SDK_PATH
+     ```
+   - Add your Gemini API key to `local.properties`:
+     ```
+     geminiApiKey=YOUR_API_KEY
+     ```
+   - Copy `app/google-services.json.example` to `app/google-services.json` and update with your Firebase configuration:
+     - Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
+     - Add your Android app to the project
+     - Download the `google-services.json` file from Firebase Console
+     - Replace the placeholder values in `app/google-services.json` with your actual Firebase configuration
 
-4. Set up Firebase:
-   - Create a Firebase project
-   - Add your Android app to the project
-   - Download and add the google-services.json file
-   - Configure Firestore security rules as described in the documentation
+4. Configure Firebase:
+   - Set up Firestore security rules as described in the documentation
+   - Enable Authentication methods you want to use
+   - Configure Firebase Storage if you plan to use it
 
 5. Build and run the application
 
