@@ -25,11 +25,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.org.edureach.R
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(navController: NavController) {
     var selectedAvatar by remember { mutableStateOf(1) } // 1 or 2 for avatar1 or avatar2
     var userName by remember { mutableStateOf("") }
+    var displayName by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(true) }
+    var showSaveMessage by remember { mutableStateOf(false) }
 
     // Load user data
     LaunchedEffect(Unit) {
@@ -39,7 +42,9 @@ fun ProfileScreen(navController: NavController) {
                 .document(uid)
                 .get()
                 .addOnSuccessListener { document ->
-                    userName = document.getString("displayName") ?: ""
+                    val name = document.getString("displayName") ?: ""
+                    userName = name
+                    displayName = name
                     selectedAvatar = document.getLong("avatarId")?.toInt() ?: 1
                     isLoading = false
                 }
@@ -49,7 +54,7 @@ fun ProfileScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
         // Header
@@ -65,7 +70,7 @@ fun ProfileScreen(navController: NavController) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "Back",
-                    tint = Color.Black
+                    tint = MaterialTheme.colorScheme.onBackground
                 )
             }
             
@@ -73,7 +78,7 @@ fun ProfileScreen(navController: NavController) {
                 text = "Profile",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Black,
+                color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.padding(start = 16.dp)
             )
         }
@@ -83,7 +88,7 @@ fun ProfileScreen(navController: NavController) {
                 modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
-                CircularProgressIndicator(color = Color(0xFFDBA84F))
+                CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
             }
         } else {
             // User Info
@@ -91,16 +96,40 @@ fun ProfileScreen(navController: NavController) {
                 text = "Welcome, $userName",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Medium,
-                color = Color.Black,
-                modifier = Modifier.padding(bottom = 32.dp)
+                color = MaterialTheme.colorScheme.onBackground,
+                modifier = Modifier.padding(bottom = 8.dp)
             )
+            
+            // Update Name Field
+            OutlinedTextField(
+                value = displayName,
+                onValueChange = { displayName = it },
+                label = { Text("Display Name") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = MaterialTheme.colorScheme.primary,
+                    unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+                    focusedLabelColor = MaterialTheme.colorScheme.primary
+                ),
+                singleLine = true
+            )
+
+            if (showSaveMessage) {
+                Text(
+                    text = "Profile updated successfully!",
+                    color = MaterialTheme.colorScheme.tertiary,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+            }
 
             // Avatar Selection
             Text(
                 text = "Select your avatar",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Medium,
-                color = Color.Black,
+                color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
@@ -117,7 +146,7 @@ fun ProfileScreen(navController: NavController) {
                         .clip(CircleShape)
                         .border(
                             width = 3.dp,
-                            color = if (selectedAvatar == 1) Color(0xFFDBA84F) else Color.Transparent,
+                            color = if (selectedAvatar == 1) MaterialTheme.colorScheme.primary else Color.Transparent,
                             shape = CircleShape
                         )
                         .clickable { selectedAvatar = 1 }
@@ -137,7 +166,7 @@ fun ProfileScreen(navController: NavController) {
                         .clip(CircleShape)
                         .border(
                             width = 3.dp,
-                            color = if (selectedAvatar == 2) Color(0xFFDBA84F) else Color.Transparent,
+                            color = if (selectedAvatar == 2) MaterialTheme.colorScheme.primary else Color.Transparent,
                             shape = CircleShape
                         )
                         .clickable { selectedAvatar = 2 }
@@ -158,15 +187,21 @@ fun ProfileScreen(navController: NavController) {
                 onClick = {
                     val userId = FirebaseAuth.getInstance().currentUser?.uid
                     userId?.let { uid ->
+                        val updates = hashMapOf<String, Any>(
+                            "avatarId" to selectedAvatar,
+                            "displayName" to displayName
+                        )
+                        
                         FirebaseFirestore.getInstance().collection("users")
                             .document(uid)
-                            .update("avatarId", selectedAvatar)
+                            .update(updates)
                             .addOnSuccessListener {
-                                navController.popBackStack()
+                                userName = displayName
+                                showSaveMessage = true
                             }
                     }
                 },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDBA84F)),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
@@ -176,7 +211,7 @@ fun ProfileScreen(navController: NavController) {
                     text = "Save",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = MaterialTheme.colorScheme.onPrimary
                 )
             }
             
@@ -190,7 +225,7 @@ fun ProfileScreen(navController: NavController) {
                         popUpTo(0) { inclusive = true }
                     }
                 },
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Red.copy(alpha = 0.8f)),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
@@ -200,7 +235,7 @@ fun ProfileScreen(navController: NavController) {
                     text = "Logout",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = MaterialTheme.colorScheme.onError
                 )
             }
         }
