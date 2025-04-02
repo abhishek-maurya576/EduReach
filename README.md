@@ -95,9 +95,9 @@ EduReach is an AI-powered educational app designed to enhance learning efficienc
      ```
      sdk.dir=YOUR_ANDROID_SDK_PATH
      ```
-   - Add your Gemini API key to `local.properties`:
+   - Copy `gradle.properties.example` to `gradle.properties` and add your Gemini API key:
      ```
-     geminiApiKey=YOUR_API_KEY
+     geminiApiKey=YOUR_GEMINI_API_KEY
      ```
    - Copy `app/google-services.json.example` to `app/google-services.json` and update with your Firebase configuration:
      - Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
