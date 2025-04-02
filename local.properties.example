@@ -1,0 +1,9 @@
+# This is an example file for local.properties
+# Copy this file to local.properties and fill in your own values
+# DO NOT commit the actual local.properties file to version control
+
+# SDK location - update this to your own SDK path
+sdk.dir=/path/to/your/android/sdk
+
+# API Keys - replace with your own keys
+gemini.api.key=YOUR_GEMINI_API_KEY_HERE 
